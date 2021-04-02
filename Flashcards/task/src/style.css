@@ -1,0 +1,57 @@
+body {
+    background-image: url("world.png");
+    background-size: 100%;
+    padding:10px;
+}
+h1{
+    width:100%;
+    text-align: center;
+    color:darkslategrey;
+}
+.flex-container {
+    margin-left: auto; margin-right: auto;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    perspective: 1000px;
+}
+
+
+.card {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+.front,.back {
+    height: 100%;
+    width: 100%;
+    border-style: solid;
+    border-radius: 15px;
+    background: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: absolute;
+
+}
+
+.front {
+    z-index: 2;
+    backface-visibility: hidden;
+}
+
+.back {
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
